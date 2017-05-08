@@ -4,25 +4,25 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
 module.exports = {
-    entry: './src/index.js',
+    entry: "./src/index.js",
     output: {
-        path: path.resolve(__dirname, '/dist'),
-        filename: 'bundle.js'
+        path: path.resolve(__dirname, "/dist"),
+        filename: "bundle.js"
     },
     module: {
         rules: [
             {
                 test: /\.scss$/, 
                 use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use:['css-loader','sass-loader'],
-                    publicPath:'/dist/'
+                    fallback: "style-loader",
+                    use:["css-loader","sass-loader"],
+                    publicPath:"/dist/"
                 })
             },
             {
                 test: /\.js$/,
-                exclude: path.resolve(__dirname,'node_modules'), 
-                use:['babel-loader'],
+                exclude: path.resolve(__dirname,"node_modules"), 
+                use:["babel-loader"],
             }
         ]
     },
@@ -31,7 +31,7 @@ module.exports = {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
         port: 3000,
-        stats: 'errors-only',
+        stats: "errors-only",
         open: true,
         hotOnly: true
     },
@@ -43,7 +43,7 @@ module.exports = {
             allChunks: true,
         }),
         new HtmlWebpackPlugin({
-            template: './src/index.html',
+            template: "./src/index.html",
             minify: {
                 collapseWhitespace: true,
                 hash: true
