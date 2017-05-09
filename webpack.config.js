@@ -32,8 +32,7 @@ module.exports = {
         compress: true,
         port: 3000,
         stats: "errors-only",
-        open: true,
-        hotOnly: true
+        open: true
     },
 
     plugins: [
