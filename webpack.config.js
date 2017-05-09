@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+const webpack = require('webpack');
 
 module.exports = {
     entry: "./src/index.js",
@@ -13,11 +13,12 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/, 
-                use: ExtractTextPlugin.extract({
+                use: ["style-loader","css-loader","sass-loader"]
+                /*ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use:["css-loader","sass-loader"],
                     publicPath:"/dist/"
-                })
+                })*/
             },
             {
                 test: /\.js$/,
@@ -32,7 +33,8 @@ module.exports = {
         compress: true,
         port: 3000,
         stats: "errors-only",
-        open: true
+        open: true,
+        hot: true
     },
 
     plugins: [
@@ -47,6 +49,9 @@ module.exports = {
                 collapseWhitespace: true,
                 hash: true
             }
-        })
+        }),
+
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
 ]
 }
