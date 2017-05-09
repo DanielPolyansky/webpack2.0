@@ -4,15 +4,16 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const webpack = require('webpack');
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: "./client/index.js",
     output: {
-        path: path.resolve(__dirname, "/dist"),
+        path: path.resolve(__dirname, "dist"),
         filename: "bundle.js"
     },
     module: {
         rules: [
             {
-                test: [/\.css$/,/\.scss$/], 
+                test: [/\.css$/,/\.scss$/],
+                include:path.resolve(__dirname, "client/styles"), 
                 use: ["style-loader","css-loader","sass-loader"]
                 /*ExtractTextPlugin.extract({
                     fallback: "style-loader",
@@ -22,11 +23,12 @@ module.exports = {
             },
             {
                 test: [/\.js$/,/\.jsx$/],
-                exclude: path.resolve(__dirname,"node_modules"), 
+                include: path.resolve(__dirname, "client"), 
                 use:["babel-loader"],
             },
             {
-                test: [/\.jpg$/,/\.jpeg$/,/\.png$/,/\.gif$/,/\.svg$/], 
+                test: [/\.jpg$/,/\.jpeg$/,/\.png$/,/\.gif$/,/\.svg$/],
+                include: path.resolve(__dirname, "client/images"),
                 use:["file-loader"],
             }
         ]
@@ -48,7 +50,7 @@ module.exports = {
             allChunks: true,
         }),
         new HtmlWebpackPlugin({
-            template: "./src/index.html",
+            template: "./server/index.html",
             minify: {
                 collapseWhitespace: true,
                 hash: true
