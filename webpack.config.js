@@ -12,7 +12,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.scss$/, 
+                test: [/\.css$/,/\.scss$/], 
                 use: ["style-loader","css-loader","sass-loader"]
                 /*ExtractTextPlugin.extract({
                     fallback: "style-loader",
@@ -21,9 +21,13 @@ module.exports = {
                 })*/
             },
             {
-                test: /\.js$/,
+                test: [/\.js$/,/\.jsx$/],
                 exclude: path.resolve(__dirname,"node_modules"), 
                 use:["babel-loader"],
+            },
+            {
+                test: [/\.jpg$/,/\.jpeg$/,/\.png$/,/\.gif$/,/\.svg$/], 
+                use:["file-loader"],
             }
         ]
     },
