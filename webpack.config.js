@@ -4,10 +4,14 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const webpack = require('webpack');
 
 module.exports = {
-    entry: "./client/index.js",
+    entry: [
+        "webpack-hot-middleware/client",
+        path.join(__dirname, "client/index.js")
+        ],
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -24,7 +28,7 @@ module.exports = {
             {
                 test: [/\.js$/,/\.jsx$/],
                 include: path.resolve(__dirname, "client"), 
-                use:["babel-loader"],
+                use:["react-hot-loader", "babel-loader"],
             },
             {
                 test: [/\.jpg$/,/\.jpeg$/,/\.png$/,/\.gif$/,/\.svg$/],
