@@ -1,0 +1,118 @@
+.l-chat{
+    position: absolute;
+    left: 2.5%;
+    top: 2.5%;
+}
+.l-contact-side{
+    position: absolute;
+    left: 0;
+}
+.l-contact-nav{
+    position: absolute;  
+    margin-bottom: 10px;
+    &--triangle{
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        transform: rotate(45deg);
+    }
+    &--search{
+        position: absolute;
+        top:10%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+    &--burger{/*костиль*/
+        position: absolute;
+        right: 5%;
+        top:10%;
+    }
+}
+.l-contact-list{
+    position: absolute;
+    top: 10%;  
+}
+.l-contact{
+    position: relative;
+    &--pic{
+        position: absolute;
+        left:7px;
+        top:15%;
+        }
+    &--username{
+        position: absolute;
+        display: inline-block;
+        top: 10%;
+        left: 75px;
+    }
+    &--time{
+        position: absolute;
+        right: 3%;
+        top: 35%;
+        padding: 5px;
+    }
+    &--message{
+        position: absolute;
+        display: inline-block;
+        bottom: 10%;
+        left: 75px;
+    }
+}
+.l-message-side{
+    position: absolute;
+    right: 0;   
+}
+.l-message-nav{
+    position: absolute; 
+    &--envelope{
+        position: absolute;
+        left: 5%;
+        top:20%;
+    }
+    &--message-search{
+        position: absolute;
+        left: 25%;
+        top: 25%;
+        padding-left: 5px;
+    }
+    &--nav__user{
+        position: absolute;
+        right: 5%;
+        top:20%;
+    }
+}
+.l-message-list{
+    position: absolute;
+    top: 10%;
+}    
+.l-message-wrap{
+    position: relative;
+    &--text{
+    position: relative;
+    display: inline-block;
+    margin: 10px 0 20px 0;
+    padding: 10px;
+    }
+    &--img{
+    position: absolute;
+    bottom: -5px;
+    }
+    &--time{
+    position: absolute;
+    bottom: -15px;
+    }
+}
+.l-input-nav{
+    position: absolute;
+    bottom: 0;
+    &--file{
+        position: absolute;
+        right: 5%;
+        top:15%;
+    }
+    &--textarea{
+        position: absolute;
+        left: 2%;
+        padding: 5px 10px;
+    }
+}

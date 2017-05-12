@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './components/Home'
 import './styles/index.scss';
+import App from './components/App';
 
 
-ReactDOM.render(<Home />, document.getElementById('app'));
+
+ReactDOM.render(<App />, document.getElementById('app'));

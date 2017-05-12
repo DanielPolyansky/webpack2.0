@@ -12,9 +12,10 @@ app.use(webpackMiddleware(compiler, {
     publicPath: webpackCongif.output.publicPath,
     noInfo: true
 }));
+
 app.use(webpackHotReload(compiler));
 
-app.get('/*', (req,res)=>{
+app.get('/', (req,res)=>{
     res.sendFile(path.join(__dirname,"index.html"));
 });
 

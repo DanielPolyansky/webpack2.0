@@ -1,0 +1,39 @@
+@import "_vars.scss";
+
+
+
+.s-contact:hover{
+    background-color: $hover-contact-color!important;
+}
+.s-contact:hover > .m-contact--time{
+    background-color: $time-bg-color!important;
+    color: $hover-contact-color!important;
+}
+
+.s-text-outcome{
+    background-color: $outcome-message-bgcolor;
+    color: $outcome-message-fcolor;
+    float: left;
+    margin-left: 70px;
+}
+.s-text-income{
+    background-color:$income-message-bgcolor;
+    float: right;
+    color: $income-message-fcolor;
+    margin-right: 70px;
+}
+
+.s-img_income{
+    right: -40px;
+}
+.s-img_outcome{
+    left: -40px;
+}
+
+.s-time-outcome{
+    right: 0;
+}
+.s-time-income{
+    left: 0;
+}
+
