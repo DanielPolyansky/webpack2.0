@@ -44,7 +44,8 @@ module.exports = {
         port: 3000,
         stats: "errors-only",
         open: true,
-        hot: true
+        hot: true,
+        historyApiFallback: true
     },
 
     plugins: [

@@ -7,10 +7,11 @@ import {BrowserRouter as Router, Route, browserHistory} from 'react-router';
 export default Routing = ()=> {
         return (
              <Router history="browserHistory">
-                <Route path="/home" component={Home} />  
-                <Route path="/sign_up" component={SignUp} />
-                <Route path="/sign_in" component={SignIn} />
+                <div>
+                        <Route exact path="/" component={Home} />  
+                        <Route exact path="/signup" component={SignUp} />
+                        <Route path="/signin" component={SignIn} />
+                </div>
              </Router>
         );
-    
 }
