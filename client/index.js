@@ -1,4 +1,4 @@
-import React from 'react';  
+import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './components/Home'
 import './styles/index.scss';

@@ -12,9 +12,9 @@ export default class App extends React.Component {
         return (
              <Router>
                 <div>
-                <Route exact path="/" component={Home} />  
-                <Route path="/sign_up" component={SignUp} />
-                <Route path="/sign_in" component={SignIn} />
+                    <Route exact path="/" component={Home} />
+                    <Route path="/sign_up" component={SignUp} />
+                    <Route path="/sign_in" component={SignIn} />
                 </div>
              </Router>
         );

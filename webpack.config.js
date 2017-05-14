@@ -17,7 +17,7 @@ module.exports = {
         rules: [
             {
                 test: [/\.css$/,/\.scss$/],
-                include:path.resolve(__dirname, "client/styles"), 
+                include:path.resolve(__dirname, "client/styles"),
                 use: ["style-loader","css-loader","sass-loader"]
                 /*ExtractTextPlugin.extract({
                     fallback: "style-loader",
@@ -27,7 +27,7 @@ module.exports = {
             },
             {
                 test: [/\.js$/,/\.jsx$/],
-                include: path.resolve(__dirname, "client"), 
+                include: path.resolve(__dirname, "client"),
                 use:["react-hot-loader", "babel-loader"],
             },
             {
@@ -55,7 +55,7 @@ module.exports = {
             allChunks: true,
         }),
         new HtmlWebpackPlugin({
-            template: "./server/index.html",
+            template: "./index.template.html",
             minify: {
                 collapseWhitespace: true,
                 hash: true

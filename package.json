@@ -30,9 +30,7 @@
     "webpack-html-plugin": "^0.1.1"
   },
   "scripts": {
-    "start": "nodemon --watch server ./server/index.js",
-    "webpack-server": "yarn run webpack-dev-server",
-    "prod": "webpack-dev-server -p"
+    "start": "webpack && nodemon server.js"
   },
   "keywords": [],
   "author": "",
