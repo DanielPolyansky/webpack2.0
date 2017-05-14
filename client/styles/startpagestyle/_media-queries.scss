@@ -1,0 +1,30 @@
+@media only screen and (max-height: 550px) {
+    nav{
+        top:20%;
+        height:70%;
+    }
+}
+@media only screen and (max-width: 780px) {
+    nav{
+        width:70%;
+    }
+}
+@media only screen and (max-width: 565px) {
+    form{
+        width: 50%;
+    }
+}
+@media only screen and (max-height: 380px) {
+    nav{
+        top:10%;
+        height: 270px;
+    }
+    header{
+        display: none;
+    }
+}
+@media only screen and (max-width: 340px) {
+    nav{
+        width: 240px;
+    }
+}

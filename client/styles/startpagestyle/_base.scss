@@ -1,0 +1,40 @@
+@import "_vars.scss";
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: $body-bg-color;
+    font-family: $body-fonts;
+    font-weight: $body-font-weight;
+    color: $body-fonts-colors;
+    text-shadow: $body-fonts-textshadow;
+}
+header{
+    display: flex;
+    position: absolute;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+    border: 1px solid black;
+    font-size: 150%;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: blue;
+}
+ul {
+  list-style-type: none;
+  display: block;
+  margin-right: 20px;
+}
+li {
+    display: inline;
+    margin: 5px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
