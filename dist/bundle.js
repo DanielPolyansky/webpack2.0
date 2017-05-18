@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6f546239c679575de953"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b9f5f4137fd3df684fa5"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -730,21 +730,11 @@ var _NavigationHeader = __webpack_require__("./client/components/NavigationHeade
 
 var _NavigationHeader2 = _interopRequireDefault(_NavigationHeader);
 
-var _Root = __webpack_require__("./client/components/Root.js");
-
-var _Root2 = _interopRequireDefault(_Root);
-
 var _Home = __webpack_require__("./client/components/Home.js");
-
-var _Home2 = _interopRequireDefault(_Home);
-
-var _SignUp = __webpack_require__("./client/components/SignUp.js");
-
-var _SignUp2 = _interopRequireDefault(_SignUp);
 
 var _SignIn = __webpack_require__("./client/components/SignIn.js");
 
-var _SignIn2 = _interopRequireDefault(_SignIn);
+var _SignUp = __webpack_require__("./client/components/SignUp.js");
 
 var _reactRouterDom = __webpack_require__("./node_modules/react-router-dom/es/index.js");
 
@@ -755,8 +745,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-//import Routing from './Routing';
-
 
 var App = function (_React$Component) {
     _inherits(App, _React$Component);
@@ -776,9 +764,11 @@ var App = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
-                    _react2.default.createElement(_reactRouterDom.Route, { path: '/sign_up', component: _SignUp2.default }),
-                    _react2.default.createElement(_reactRouterDom.Route, { path: '/sign_in', component: _SignIn2.default })
+                    _react2.default.createElement(_NavigationHeader2.default, null),
+                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home.Home }),
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/home', component: _Home.Home }),
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/sign_in', component: _SignIn.SignIn }),
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/sign_up', component: _SignUp.SignUp })
                 )
             );
         }
@@ -854,7 +844,7 @@ exports.default = Home;
 
 /* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__("./node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = __webpack_require__("./node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = __webpack_require__("./node_modules/react-dom/lib/ReactMount.js"), React = __webpack_require__("./node_modules/react/react.js"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -865,6 +855,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__("./node_modules/react/react.js");
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__("./node_modules/react-router-dom/es/index.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -884,42 +876,42 @@ var NavigationHeader = function (_React$Component) {
     }
 
     _createClass(NavigationHeader, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "header",
+                'header',
                 null,
                 _react2.default.createElement(
-                    "nav",
+                    'nav',
                     null,
                     _react2.default.createElement(
-                        "ul",
+                        'ul',
                         null,
                         _react2.default.createElement(
-                            "li",
+                            'li',
                             null,
                             _react2.default.createElement(
-                                "a",
-                                { href: "" },
-                                "Home"
+                                _reactRouterDom.NavLink,
+                                { to: '/home' },
+                                'Home'
                             )
                         ),
                         _react2.default.createElement(
-                            "li",
+                            'li',
                             null,
                             _react2.default.createElement(
-                                "a",
-                                { href: "" },
-                                "Sign In"
+                                _reactRouterDom.NavLink,
+                                { to: '/sign_in' },
+                                'Sign In'
                             )
                         ),
                         _react2.default.createElement(
-                            "li",
+                            'li',
                             null,
                             _react2.default.createElement(
-                                "a",
-                                { href: "" },
-                                "Sign Up"
+                                _reactRouterDom.NavLink,
+                                { to: '/sign_up' },
+                                'Sign Up'
                             )
                         )
                     )
@@ -934,66 +926,6 @@ var NavigationHeader = function (_React$Component) {
 exports.default = NavigationHeader;
 
 /* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__("./node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, __webpack_require__("./node_modules/react/react.js"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "NavigationHeader.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/module.js")(module)))
-
-/***/ }),
-
-/***/ "./client/components/Root.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__("./node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = __webpack_require__("./node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = __webpack_require__("./node_modules/react-dom/lib/ReactMount.js"), React = __webpack_require__("./node_modules/react/react.js"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__("./node_modules/react/react.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _NavigationHeader = __webpack_require__("./client/components/NavigationHeader.js");
-
-var _NavigationHeader2 = _interopRequireDefault(_NavigationHeader);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Root = function (_React$Component) {
-    _inherits(Root, _React$Component);
-
-    function Root() {
-        _classCallCheck(this, Root);
-
-        return _possibleConstructorReturn(this, (Root.__proto__ || Object.getPrototypeOf(Root)).apply(this, arguments));
-    }
-
-    _createClass(Root, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(_NavigationHeader2.default, null),
-                this.props.children
-            );
-        }
-    }]);
-
-    return Root;
-}(_react2.default.Component);
-
-exports.default = Root;
-
-/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__("./node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, __webpack_require__("./node_modules/react/react.js"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Root.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
@@ -1017,6 +949,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -1026,19 +960,55 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var SignIn = function (_React$Component) {
     _inherits(SignIn, _React$Component);
 
-    function SignIn() {
+    function SignIn(props) {
         _classCallCheck(this, SignIn);
 
-        return _possibleConstructorReturn(this, (SignIn.__proto__ || Object.getPrototypeOf(SignIn)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (SignIn.__proto__ || Object.getPrototypeOf(SignIn)).call(this, props));
+
+        _this.state = {
+            nick: '',
+            pass: ''
+        };
+
+        _this.onChange = _this.onChange.bind(_this);
+        _this.onSubmit = _this.onSubmit.bind(_this);
+        return _this;
     }
 
     _createClass(SignIn, [{
+        key: 'onChange',
+        value: function onChange(e) {
+            this.setState(_defineProperty({}, e.target.name, e.target.value));
+        }
+    }, {
+        key: 'onSubmit',
+        value: function onSubmit(e) {
+            e.preventDefault();
+            console.log(this.state);
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'h1',
-                null,
-                'Sign In'
+                'div',
+                { className: 'sign-form' },
+                _react2.default.createElement(
+                    'form',
+                    { id: 'sign-in-form' },
+                    _react2.default.createElement(
+                        'label',
+                        { 'for': 'nick' },
+                        'email address'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', name: 'nick', value: this.state.nick, onChange: this.onChange }),
+                    _react2.default.createElement(
+                        'label',
+                        { 'for': 'pass' },
+                        'password'
+                    ),
+                    _react2.default.createElement('input', { type: 'password', name: 'pass', value: this.state.pass, onChange: this.onChange }),
+                    _react2.default.createElement('input', { type: 'submit', value: 'Sign in' })
+                )
             );
         }
     }]);
@@ -1072,6 +1042,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -1081,19 +1053,82 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var SignUp = function (_React$Component) {
     _inherits(SignUp, _React$Component);
 
-    function SignUp() {
+    function SignUp(props) {
         _classCallCheck(this, SignUp);
 
-        return _possibleConstructorReturn(this, (SignUp.__proto__ || Object.getPrototypeOf(SignUp)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (SignUp.__proto__ || Object.getPrototypeOf(SignUp)).call(this, props));
+
+        _this.state = {
+            nick: '',
+            email: '',
+            pass: '',
+            confPass: ''
+        };
+
+        _this.onChange = _this.onChange.bind(_this);
+        _this.onSubmit = _this.onSubmit.bind(_this);
+        return _this;
     }
 
     _createClass(SignUp, [{
+        key: 'onChange',
+        value: function onChange(e) {
+            this.setState(_defineProperty({}, e.target.name, e.target.value));
+        }
+    }, {
+        key: 'onSubmit',
+        value: function onSubmit(e) {
+            e.preventDefault();
+            console.log(this.state);
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'h1',
-                null,
-                'Sign Up'
+                'div',
+                { className: 'sign-form' },
+                _react2.default.createElement(
+                    'span',
+                    { id: 'sign-up-tab', className: 'm-tab l-tab m-sign-up l-sign-up' },
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        'Sign up'
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'm-content-sign l-content-sign' },
+                    _react2.default.createElement(
+                        'form',
+                        { id: 'sign-up-form', onSubmit: this.onSubmit },
+                        _react2.default.createElement(
+                            'label',
+                            { 'for': 'email' },
+                            'email address'
+                        ),
+                        _react2.default.createElement('input', { type: 'email', name: 'email', value: this.state.email, onChange: this.onChange }),
+                        _react2.default.createElement(
+                            'label',
+                            { 'for': 'nick' },
+                            'nickname'
+                        ),
+                        _react2.default.createElement('input', { type: 'text', name: 'nick', value: this.state.nick, onChange: this.onChange }),
+                        _react2.default.createElement(
+                            'label',
+                            { 'for': 'password' },
+                            'password'
+                        ),
+                        _react2.default.createElement('input', { type: 'password', name: 'pass', value: this.state.pass, onChange: this.onChange }),
+                        _react2.default.createElement(
+                            'label',
+                            { 'for': 'mail' },
+                            'pass confirm'
+                        ),
+                        _react2.default.createElement('input', { type: 'password', name: 'confPass', value: this.state.confPass, onChange: this.onChange }),
+                        _react2.default.createElement('input', { type: 'submit', value: 'Sign up' })
+                    )
+                )
             );
         }
     }]);
@@ -1123,19 +1158,23 @@ var _reactDom = __webpack_require__("./node_modules/react-dom/index.js");
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Home = __webpack_require__("./client/components/Home.js");
-
-var _Home2 = _interopRequireDefault(_Home);
-
 __webpack_require__("./client/styles/index.scss");
 
 var _App = __webpack_require__("./client/components/App.js");
 
 var _App2 = _interopRequireDefault(_App);
 
+var _SignUp = __webpack_require__("./client/components/SignUp.js");
+
+var _SignUp2 = _interopRequireDefault(_SignUp);
+
+var _SignIn = __webpack_require__("./client/components/SignIn.js");
+
+var _SignIn2 = _interopRequireDefault(_SignIn);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
+_reactDom2.default.render(_react2.default.createElement(_SignIn2.default, null), document.getElementById('app'));
 
 /* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__("./node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, __webpack_require__("./node_modules/react/react.js"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/module.js")(module)))
@@ -1378,7 +1417,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "body {\n  padding: 0px;\n  margin: 0px;\n  background-color: #989AD7;\n  font-family: \"Arial Black\", Gadget, sans-serif;\n  font-weight: bold;\n  color: #E2E2EF;\n  text-shadow: 2px 1px black; }\n\nheader {\n  display: flex;\n  position: absolute;\n  justify-content: right;\n  align-items: center;\n  width: 100%;\n  border: 1px solid black;\n  font-size: 150%; }\n\na {\n  text-decoration: none; }\n\na:hover {\n  color: blue; }\n\nul {\n  list-style-type: none;\n  display: block;\n  margin-right: 20px; }\n\nli {\n  display: inline;\n  margin: 5px; }\n\nform {\n  display: flex;\n  flex-direction: column;\n  width: 30%; }\n\n[type=submit] {\n  position: relative;\n  margin-top: 10px;\n  transform: translate(50%); }\n\n.l-tab {\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.l-sign-up {\n  right: 0; }\n\n.l-content-sign {\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  top: 20%;\n  align-items: center;\n  justify-content: center; }\n\n@media only screen and (max-height: 550px) {\n  nav {\n    top: 20%;\n    height: 70%; } }\n\n@media only screen and (max-width: 780px) {\n  nav {\n    width: 70%; } }\n\n@media only screen and (max-width: 565px) {\n  form {\n    width: 50%; } }\n\n@media only screen and (max-height: 380px) {\n  nav {\n    top: 10%;\n    height: 270px; }\n  header {\n    display: none; } }\n\n@media only screen and (max-width: 340px) {\n  nav {\n    width: 240px; } }\n\n[type=submit] {\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: bold;\n  width: 50%; }\n\n.m-tab {\n  width: 50%;\n  height: 20%;\n  background-color: #3B3E99;\n  border-radius: 12px 12px 0 0;\n  border-bottom: 1px solid white;\n  font-family: Arial, Helvetica, sans-serif; }\n\n.m-sign-up {\n  background-color: inherit; }\n\n.m-content-sign {\n  width: 100%;\n  height: 80%; }\n\n.sign-up-form--is-shown {\n  display: none; }\n", ""]);
+exports.push([module.i, "body {\n  padding: 0px;\n  margin: 0px;\n  background-color: #989AD7;\n  font-family: \"Arial Black\", Gadget, sans-serif;\n  font-weight: bold;\n  color: #E2E2EF;\n  text-shadow: 2px 1px black; }\n\nheader {\n  display: flex;\n  position: absolute;\n  justify-content: right;\n  align-items: center;\n  width: 100%;\n  border: 1px solid black;\n  font-size: 150%; }\n\na {\n  text-decoration: none; }\n\na:hover {\n  color: blue; }\n\nul {\n  list-style-type: none;\n  display: block;\n  margin-right: 20px; }\n\nli {\n  display: inline;\n  margin: 5px; }\n\n.sign-form {\n  position: absolute;\n  top: 25%;\n  left: 50%;\n  transform: translate(-50%);\n  width: 50%;\n  height: 50%;\n  border-radius: 12px;\n  box-shadow: 0px 0px 12px white; }\n\nform {\n  display: flex;\n  flex-direction: column;\n  width: 30%; }\n\n[type=submit] {\n  position: relative;\n  margin-top: 10px;\n  transform: translate(50%); }\n\n.l-tab {\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.l-sign-up {\n  text-align: center; }\n\n.l-content-sign {\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  top: 20%;\n  align-items: center;\n  justify-content: center; }\n\n@media only screen and (max-height: 550px) {\n  .sign-form {\n    top: 20%;\n    height: 70%; } }\n\n@media only screen and (max-width: 780px) {\n  .sign-form {\n    width: 70%; } }\n\n@media only screen and (max-width: 565px) {\n  form {\n    width: 50%; } }\n\n@media only screen and (max-height: 380px) {\n  .sign-form {\n    top: 10%;\n    height: 270px; }\n  header {\n    display: none; } }\n\n@media only screen and (max-width: 340px) {\n  .sign-form {\n    width: 240px; } }\n\n[type=submit] {\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: bold;\n  width: 50%; }\n\n.m-tab {\n  height: 20%;\n  width: 100%;\n  background-color: #3B3E99;\n  border-radius: 12px 12px 0 0;\n  border-bottom: 1px solid white;\n  font-family: Arial, Helvetica, sans-serif; }\n\n.m-content-sign {\n  width: 100%;\n  height: 80%; }\n\n.sign-up-form--is-shown {\n  display: none; }\n", ""]);
 
 // exports
 

@@ -32,7 +32,16 @@ li {
     display: inline;
     margin: 5px;
 }
-
+.sign-form {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 50%;
+  height: 50%;;
+  border-radius: $nav-border-radius;
+  box-shadow: $nav-box-shadows;
+}
 form{
     display: flex;
     flex-direction: column;

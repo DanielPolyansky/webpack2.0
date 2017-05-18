@@ -1,11 +1,11 @@
 @media only screen and (max-height: 550px) {
-    nav{
+    .sign-form{
         top:20%;
         height:70%;
     }
 }
 @media only screen and (max-width: 780px) {
-    nav{
+    .sign-form{
         width:70%;
     }
 }
@@ -15,7 +15,7 @@
     }
 }
 @media only screen and (max-height: 380px) {
-    nav{
+    .sign-form{
         top:10%;
         height: 270px;
     }
@@ -24,7 +24,7 @@
     }
 }
 @media only screen and (max-width: 340px) {
-    nav{
+    .sign-form{
         width: 240px;
     }
 }

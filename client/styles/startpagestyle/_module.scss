@@ -6,16 +6,14 @@
     width: 50%;
 }
 .m-tab{
-    width: 50%;
     height: 20%;
+    width: 100%;
     background-color: $tab-bg-color;
     border-radius: $tab-border-radies;
     border-bottom:$tab-border-bottom;
     font-family: $tab-font-family;
 }
-.m-sign-up{
-    background-color: inherit;
-}
+
 .m-content-sign{
     width: 100%;
     height: 80%;
