@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e2c2632af6c740b406fb"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "19faa6d5bca482469440"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1131,6 +1131,7 @@ var SignUp = function (_React$Component) {
         value: function onSubmit(e) {
             var _this2 = this;
 
+            this.setState({ errors: {} });
             e.preventDefault();
             this.props.userSignUpReq(this.state).then(function () {}, function (_ref) {
                 var data = _ref.data;
@@ -1140,6 +1141,8 @@ var SignUp = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var errors = this.state.errors;
+
             return _react2.default.createElement(
                 'div',
                 null,
@@ -1159,29 +1162,45 @@ var SignUp = function (_React$Component) {
                         'form',
                         { id: 'sign-up-form', onSubmit: this.onSubmit },
                         _react2.default.createElement(
-                            'label',
-                            { htmlFor: 'email' },
-                            'email address'
+                            'div',
+                            null,
+                            _react2.default.createElement(
+                                'label',
+                                { htmlFor: 'email' },
+                                'email address'
+                            ),
+                            _react2.default.createElement('input', { type: 'email', name: 'email', value: this.state.email, onChange: this.onChange })
                         ),
-                        _react2.default.createElement('input', { type: 'email', name: 'email', value: this.state.email, onChange: this.onChange }),
                         _react2.default.createElement(
-                            'label',
-                            { htmlFor: 'nick' },
-                            'nickname'
+                            'div',
+                            null,
+                            _react2.default.createElement(
+                                'label',
+                                { htmlFor: 'nick' },
+                                'nickname'
+                            ),
+                            _react2.default.createElement('input', { type: 'text', name: 'nick', value: this.state.nick, onChange: this.onChange })
                         ),
-                        _react2.default.createElement('input', { type: 'text', name: 'nick', value: this.state.nick, onChange: this.onChange }),
                         _react2.default.createElement(
-                            'label',
-                            { htmlFor: 'password' },
-                            'password'
+                            'div',
+                            null,
+                            _react2.default.createElement(
+                                'label',
+                                { htmlFor: 'password' },
+                                'password'
+                            ),
+                            _react2.default.createElement('input', { type: 'password', name: 'pass', value: this.state.pass, onChange: this.onChange })
                         ),
-                        _react2.default.createElement('input', { type: 'password', name: 'pass', value: this.state.pass, onChange: this.onChange }),
                         _react2.default.createElement(
-                            'label',
-                            { htmlFor: 'mail' },
-                            'pass confirm'
+                            'div',
+                            null,
+                            _react2.default.createElement(
+                                'label',
+                                { htmlFor: 'mail' },
+                                'pass confirm'
+                            ),
+                            _react2.default.createElement('input', { type: 'password', name: 'confPass', value: this.state.confPass, onChange: this.onChange })
                         ),
-                        _react2.default.createElement('input', { type: 'password', name: 'confPass', value: this.state.confPass, onChange: this.onChange }),
                         _react2.default.createElement('input', { type: 'submit', value: 'Sign up' })
                     )
                 )

@@ -11,7 +11,7 @@ function validateInput(data){
         errors.email = "email is required";
     }
     if(!validator.isEmail(data.email)){
-        errors.email = "email is required";
+        errors.email = "email is not valid";
     }
     if(validator.isEmpty(data.nick)){
         errors.nick= "nick is required";
@@ -32,7 +32,7 @@ function validateInput(data){
 }
 
 router.post('/', (req, res) => {
-    console.log(req.body);
+
     const { errors, isValid } = validateInput(req.body);
 
     if(!isValid){
