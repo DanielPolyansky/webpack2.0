@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+
 
 export default class SignUp extends React.Component {
 
@@ -22,12 +24,13 @@ export default class SignUp extends React.Component {
     }
     onSubmit(e){
         e.preventDefault();
-        console.log(this.state);
+       // axios.post('/api/user', {user: this.state});
+       this.props.userSignUpReq(this.state);
     }
 
     render() {
         return (
-        <div className="sign-form">
+        <div>
             <span id="sign-up-tab" className="m-tab l-tab m-sign-up l-sign-up"><p>Sign up</p></span>
             <div className="m-content-sign l-content-sign">
                     <form id="sign-up-form" onSubmit={this.onSubmit}>
@@ -45,4 +48,8 @@ export default class SignUp extends React.Component {
         </div>
         );
     }
+}
+
+SignUp.propTypes = {
+    userSignUpReq: React.PropTypes.func.isRequired
 }
