@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import PropTypes from 'prop-types';
 
 export default class SignUp extends React.Component {
 
@@ -10,7 +10,8 @@ export default class SignUp extends React.Component {
             nick: '',
             email: '',
             pass: '',
-            confPass: ''
+            confPass: '',
+            errors: {}
         }
 
         this.onChange = this.onChange.bind(this);
@@ -23,9 +24,12 @@ export default class SignUp extends React.Component {
         )
     }
     onSubmit(e){
+        this.setState({errors :{}});
         e.preventDefault();
-       // axios.post('/api/user', {user: this.state});
-       this.props.userSignUpReq(this.state);
+       this.props.userSignUpReq(this.state).then(
+           ()=>{},
+           ({data}) => this.setState({errors: data})
+       );
     }
 
     render() {
@@ -51,5 +55,5 @@ export default class SignUp extends React.Component {
 }
 
 SignUp.propTypes = {
-    userSignUpReq: React.PropTypes.func.isRequired
+    userSignUpReq: PropTypes.func.isRequired
 }

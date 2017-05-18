@@ -5,13 +5,17 @@
   "main": "index.js",
   "dependencies": {
     "axios": "^0.16.1",
+    "body-parser": "^1.17.2",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "validator": "^7.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -34,7 +38,7 @@
     "webpack-html-plugin": "^0.1.1"
   },
   "scripts": {
-    "start": "webpack && nodemon server.js"
+    "start": "webpack && nodemon ./server/server.js"
   },
   "keywords": [],
   "author": "",
