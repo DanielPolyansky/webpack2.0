@@ -8,6 +8,16 @@ body{
     color: $body-fonts-colors;
     text-shadow: $body-fonts-textshadow;
 }
+nav{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 50%;
+  height: 50%;;
+  border-radius: $nav-border-radius;
+  box-shadow: $nav-box-shadows;
+}
 header{
     display: flex;
     position: absolute;
@@ -19,6 +29,17 @@ header{
 }
 a {
     text-decoration: none;
+}
+#btn {
+    position: relative;
+    margin-top: 10px;
+    transform: translate(50%);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
 }
 a:hover {
     color: blue;
@@ -41,9 +62,4 @@ li {
   height: 50%;;
   border-radius: $nav-border-radius;
   box-shadow: $nav-box-shadows;
-}
-form{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
 }
